@@ -25,8 +25,8 @@ Main source directory containing all business logic, mock data, and type definit
 
 ### `src/adapters/`  
 Houses transformation logic for each MVNO API format:
-- `rest/`: Parses REST API responses (e.g., user data usage).
-- `soap/`: Parses SOAP XML responses (e.g., SMS charges).
+- `rest/`: Parses REST API responses.
+- `soap/`: Parses SOAP XML responses.
 
 ### `src/types/`  
 Defines TypeScript interfaces:
