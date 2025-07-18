@@ -1,12 +1,10 @@
 import { MvnoSoapResponse } from "../../types/mvnoSoap";
 import { InternalData } from "../../types/internal";
 import fs from "fs";
-import path from "path";
 import { XMLParser } from "fast-xml-parser";
-import { cursorTo } from "readline";
 
-// for test purpose we will be using the mock file here
-// in the real world we would be receiving the string from the API and parse it
+// Parses SOAP XML file and extracts ChargeSMS data
+// Returns a single SMS charge in Telgea's internal format
 export function mapSoapToInternal(filePath: string): InternalData {
   const xmlData = fs.readFileSync(filePath, "utf-8");
 
@@ -18,6 +16,7 @@ export function mapSoapToInternal(filePath: string): InternalData {
   const parsed: MvnoSoapResponse = parser.parse(xmlData);
   const soap = parsed["soapenv:Envelope"]["soapenv:Body"]["sms:ChargeSMS"];
 
+  // Extract relevant ChargeSMS data from nested structure
   return {
     telgea_user_id: soap["sms:UserID"],
     msisdn: soap["sms:PhoneNumber"],

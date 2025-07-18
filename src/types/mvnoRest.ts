@@ -1,3 +1,5 @@
+// Type definitions for external MVNO REST API responses
+// Mirrors expected structure of MVNO responses
 export interface MvnoRestReponse {
   user_id: string;
   msisdn: string;

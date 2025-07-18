@@ -1,10 +1,11 @@
 import { MvnoRestReponse } from "../../types/mvnoRest";
 import { InternalData } from "../../types/internal";
 
-// In this function will be mapping the data given from the telecoms API response
-// to Telgea's internal API
-// REST response doesn't have sms information
+// Converts REST response from MVNO into Telgea's internal normalized format
+// SMS data is expected separately via SOAP
 export function mapRestToInternal(rest: MvnoRestReponse): InternalData {
+  // Direct mapping of REST fields to internal structure
+  // Assumes all required fields are present and correctly typed
   return {
     telgea_user_id: rest.user_id,
     msisdn: rest.msisdn,

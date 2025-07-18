@@ -1,3 +1,5 @@
+// Type definitions for external MVNO SOAP API responses
+// Mirrors expected structure of MVNO responses
 export interface MvnoSoapResponse {
   "soapenv:Envelope": {
     "soapenv:Body": {

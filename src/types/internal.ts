@@ -1,3 +1,6 @@
+// Type definitions for Telgea's internal API format
+// Used for type safety and structure enforcement
+
 export interface InternalUsageData {
   total_mb: number;
   roaming_mb: number;
