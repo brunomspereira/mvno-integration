@@ -14,6 +14,13 @@ We are building a modular **TypeScript + Node.js** application that:
 - Maps external API data into **Telgea’s internal normalized format**.
 - Maintains a clean separation of concerns to ensure the system is **testable, maintainable, and easy to extend** for future providers or data types.
 
+## Design Priorities
+
+- **Modularity**: Each MVNO format has its own adapter, allowing independent testing and easy onboarding of new providers.
+- **Type Safety**: TypeScript interfaces enforce strict contracts between external APIs and the internal format.
+- **Mock-Driven Development**: Uses mock data to simulate real-world integration without needing live network calls.
+- **Minimal Assumptions**: The parsers assume only what's provided in the spec, allowing for flexibility and fault-tolerance in future formats.
+
 ---
 
 ## Folder Structure
