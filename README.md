@@ -30,19 +30,20 @@ Houses transformation logic for each MVNO API format:
 
 ### `src/types/`  
 Defines TypeScript interfaces:
-- `external.ts`: MVNO's REST and SOAP formats.
+- `mvnoRest.ts`: MVNO's REST format.
+- `mvnoSoap.ts`: MVNO's SOAP format.
 - `internal.ts`: Telgea's internal normalized data format.
 
 ### `src/mocks/`  
 Mock data used to test transformations without hitting real APIs:
-- `mvno_rest.json`: Example REST response.
-- `mvno_soap.xml`: Example SOAP ChargeSMS payload.
+- `mvno-rest.json`: Example REST response.
+- `mvno-soap.xml`: Example SOAP ChargeSMS payload.
 
 ### `src/index.ts`  
 Entry point of the application:
 - Reads mock files.
 - Invokes the corresponding parsers.
-- Outputs the final merged and normalized data object.
+- Outputs the final data object.
 
 ---
 
